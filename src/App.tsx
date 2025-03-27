@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Bell, Phone, Download, Moon, Sun, Shield, AlertTriangle, Volume2, MapPin, MessageSquare, PhoneCall, HardDrive, Search, ArrowUp, ChevronRight, Facebook, Twitter, Instagram, Linkedin, Mail } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark' | 'danger'>('light');
