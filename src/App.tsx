@@ -458,5 +458,3 @@ function EmergencyCard({ number, description }: { number: string; description: s
 }
 
 export default App;
-
-export default App
