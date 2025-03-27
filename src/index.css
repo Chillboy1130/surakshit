@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.welcome-loader {
+  @apply fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white;
+  animation: fadeOut 0.5s ease-out 3s forwards;
+}
+
+.welcome-text {
+  @apply text-4xl md:text-6xl font-bold;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.welcome-subtext {
+  @apply text-xl md:text-2xl mt-4 opacity-0;
+  animation: scaleIn 0.5s ease-out 0.5s forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.glass-effect {
+  backdrop-filter: blur(8px);
+}
+
+.light .glass-effect {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.dark .glass-effect {
+  background: rgba(79, 70, 64, 0.9);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+}
+
+.dark .gradient-text {
+  @apply from-blue-400 to-indigo-400;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.scroll-to-top {
+  @apply fixed bottom-8 right-8 p-3 rounded-full shadow-lg transition-all duration-300 z-50;
+}
+
+.light .scroll-to-top {
+  @apply bg-white text-gray-800 hover:bg-gray-100;
+}
+
+.dark .scroll-to-top {
+  @apply bg-gray-800 text-white hover:bg-gray-700;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50;
+}
+
+.modal-content {
+  @apply bg-white dark:bg-gray-800 rounded-lg p-8 max-w-md w-full transform transition-all duration-300 scale-100 animate-slide-in;
+}
+
+.service-card {
+  @apply glass-effect p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.footer {
+  @apply mt-16 py-12 bg-gradient-to-b from-transparent to-gray-100 dark:to-gray-900;
+}
+
+.nav-link {
+  @apply transition-colors duration-300 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400;
+}
+
+.nav-link-active {
+  @apply text-blue-600 dark:text-blue-400;
+}
